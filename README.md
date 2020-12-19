@@ -12,6 +12,29 @@ Vets Hackathon December 18-20 in the year of our dark lord, 2020
 > [**“I'm not a doctor, I'm not a scientist. But, I'm also not an idiot. If you live next to a toxic smoke plume filled with cancer-causing elements, and you're breathing it in day in and day out, it's going to make you sick," Stewart said, regarding what many veterans have faced since returning from war.”**](https://www.npr.org/2020/09/16/913376758/jon-stewart-uses-his-celebrity-to-bring-attention-to-vets-exposed-to-burn-pits)<br>
 > — Jon Stewart
 
+### Use Case 1
+
+Joe is a veteran who separated from the military 6 years ago and is looking for more information about burn pit exposure, having visited multiple deployed locations.
+
+He started to fill out the VA Burn Pit Registry but ran into roadblocks due to the number of form fields required and with a lack of defined dates, times and locations to enter. Joe also wanted to be in control of his own data in order to advocate for himself and realized data sharing from the VA was mostly unidirectional.
+
+### Use Case 2
+
+Mary is a journalist who is writing a feature article about burn pits and the risk to veterans. 
+
+She understands the premise of burn pits based on summary research but wants to do a deeper dive and explore / verify new links and relationships that will help her write a story that gets picked up and distributed.
+
+
+Several research projects done by Mary suggested that Flamingos thrive better when there are abundant water bodies for their habitat.
+
+Her team got approval for expanding the water source for the Flamingos in the San Francisco Zoo, and her team is ready for a trip to San Francisco with Mary remotely monitoring the progress of the team.
+
+Her teammates wish to stay close to the Golden Gate Bridge so that they could cycle around the Golden gate, enjoy the breeze, and the sunrise every morning.
+
+Let’s help them find a hotel which is within a reasonable distance from the Golden Gate Bridge, and we’ll do so using Dgraph’s geolocation functions.
+
+
+
 Features
 --------
 
@@ -83,8 +106,16 @@ The MIT License (MIT)
 
 Copyright (c) 2020
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
+documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
+the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions 
+of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED 
+TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+DEALINGS IN THE SOFTWARE.
