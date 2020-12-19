@@ -1,8 +1,10 @@
+![Test Image 7](https://github.com/airboyd/burn_pit/master/fireball.png)
+
 # Pyrograph
 # Smoke-Pit
 # Trogdor (Burninating the Countryside)
 
-Vets Hackathon December 18-20 in the year of Satan, 2020
+Vets Hackathon December 18-20 in the year of our dark lord, 2020
 
 
 ### The Problem
