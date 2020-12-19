@@ -9,6 +9,7 @@
 <script>
 import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
 import mapNav from "../components/mapNav";
+import { json } from "../countries";
 export default {
   name: "Map",
   components: {
@@ -16,7 +17,29 @@ export default {
   },
   data() {
     return {
-      myMap: null
+      myMap: null,
+
+      polygon: {
+        type: "FeatureCollection",
+        features: [
+          {
+            type: "Feature",
+            geometry: {
+              type: "Point",
+              coordinates: [12.87, 43.1]
+            },
+            properties: {
+              id: "ITA2054",
+              worldview: "all",
+              tilequery: {
+                distance: 0,
+                geometry: "polygon",
+                layer: "boundaries_admin_2"
+              }
+            }
+          }
+        ]
+      }
     };
   },
   computed: {
@@ -45,11 +68,11 @@ export default {
       this.myMap.fitBounds(line.getBounds());
     },
     recurseArr(newArr) {
-      newArr.forEach(item => {
+      return newArr.map(item => {
         if (item.length == 2) {
           return item.reverse();
         } else {
-          this.recurseArr(item);
+          return this.recurseArr(item);
         }
       });
     },
@@ -72,26 +95,42 @@ export default {
       });
 
       this.myMap.fitBounds(polys.getBounds());
+    },
+    addCountries() {
+      // debugger;
+      // console.log(json.type);
+      // console.log("features length " + json.features.length);
+
+      if (json.features) {
+        // json.features[1].geometry.coordinates.forEach(geo => {
+        const newCords = this.recurseArr(json.features[0].geometry.coordinates);
+        var polygon = L.polygon(newCords, {
+          color: "red"
+        }).addTo(this.myMap);
+        // });
+      }
     }
   },
   mounted() {
     console.log(process.env.MAP_KEY);
     this.myMap = L.map("mapid", {
       center: [38.97649255070067, -76.84675534064796],
-      zoom: 9,
+      zoom: 11,
       renderer: L.svg()
     });
     //.setView([51.505, -0.09], 13);
     L.tileLayer(
       "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
       {
-        maxZoom: 18,
+        maxZoom: 5,
+        minZoom: 3,
         id: "mapbox/dark-v10", //"mapbox/streets-v11",
         tileSize: 512,
         zoomOffset: -1,
         accessToken: process.env.MAP_KEY
       }
     ).addTo(this.myMap);
+    this.addCountries();
     this.myMap.on("click", this.getLatLong);
   },
   watch: {
