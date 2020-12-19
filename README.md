@@ -87,7 +87,8 @@ CREATE
 Contributing
 ------------
 
-If something is unclear, confusing, or needs to be refactored, please let us know. Pull requests are always welcome. Please open an issue before submitting a pull request.
+If something is unclear, confusing, or needs to be refactored, please let us know. Pull requests are always welcome. 
+Please open an issue before submitting a pull request.
 
 License
 -------
