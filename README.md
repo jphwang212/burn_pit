@@ -1,8 +1,6 @@
 ![fire](https://raw.githubusercontent.com/airboyd/burn_pit/main/fireball.png)
 
 # Pyrograph
-# Smoke-Pit
-# Trogdor (Burninating the Countryside)
 
 Vets Hackathon December 18-20 in the year of our dark lord, 2020
 
