@@ -33,35 +33,45 @@ Features
 - MVC Project Structure
 - Sass stylesheets (auto-compiled via middleware)
 - Vue.JS
-- Contact Form (powered by Mailgun, Sendgrid or Mandrill)
-- **Account Management**
- - Profile Details
- - Change Password
- - Forgot Password
- - Reset Password
- - Delete Account
+- Input Form
 
 
 Prerequisites (Fill in with actuals)
 -------------
 
-- [MongoDB](https://www.mongodb.com/download-center/community)
-- [Node.js 10+](http://nodejs.org)
-- Command Line Tools
- - <img src="http://deluge-torrent.org/images/apple-logo.gif" height="17">&nbsp;**Mac OS X:** [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) (or **OS X 10.9+**: `xcode-select --install`)
- - <img src="http://dc942d419843af05523b-ff74ae13537a01be6cfec5927837dcfe.r14.cf1.rackcdn.com/wp-content/uploads/windows-8-50x50.jpg" height="17">&nbsp;**Windows:** [Visual Studio](https://www.visualstudio.com/products/visual-studio-community-vs) OR [Visual Studio Code](https://code.visualstudio.com) + [Windows Subsystem for Linux - Ubuntu](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+- [Postman API Client](https://www.postman.com/product/rest-client/)
+OR 
+CURL from command line
+OR 
+Your HTTP Request library of choice (Httpie, Python Requests, etc.)
 
 **Note:** Special thing to keep in mind lest you screw up.
 
 
-###Data Model
+Data Model
 ---------------
 ![data-model](https://raw.githubusercontent.com/airboyd/burn_pit/main/burn-pit-data-model.png)
 
-Getting Started
----------------
 
-The easiest way to get started is to clone the repository:
+
+Getting Started with the API
+---------------
+1. Download Postman
+
+[Postman API Client](https://www.postman.com/product/rest-client/)
+
+2. View GraphQL API Documentation
+
+https://documenter.getpostman.com/view/2502975/TVssk8rA
+
+3. Download Postman Collection from link above
+
+4. Run individual API calls to Create, Read, Update and Destroy the data you need into / out of the Pyrograph.
+
+
+
+So you wanna clone this repo?
+---------------
 
 ```bash
 # Get the latest snapshot
@@ -70,23 +80,6 @@ git clone https://github.com/sahat/hackathon-starter.git myproject
 # Change directory
 cd myproject
 
-# Install NPM dependencies
-npm install
-
-###The Data Model
-
-Example Neo4J Cypher language Query to create basic nodes and edges
-```
-CREATE
-  (`0` :`Burn Pit` {Name:"Camp Fallujah",lat:'33.355026',lng:'43.783337'}) ,
-  (`1` :ServiceMember {Name:"Billy Badass",JoinDate:'2018-12-19',ReleaseDate:'209-12-19'}) ,
-  (`2` :Material {Name:'Batteries',ImgURI:'https://ds8ah.com'}) ,
-  (`4` :`Burn Pit` {Name:"Camp Baharia",Lat:'33.315264',Long:'43.883169'}) ,
-  (`1`)-[:`Visited` ]->(`0`),
-  (`2`)-[:``Burned at`` ]->(`0`),
-  (`1`)-[:`Visited` ]->(`4`)
-
-```
 
 Contributing
 ------------
