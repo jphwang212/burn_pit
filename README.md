@@ -27,9 +27,8 @@ Features
 --------
 
 - **Local Authentication** using Email and Password
-- **OAuth 2.0 Authentication** via GitHub
 - MVC Project Structure
-- Sass stylesheets (auto-compiled via middleware)
+- Map-based graph visualization
 - Vue.JS
 - Input Form
 
@@ -37,16 +36,16 @@ Features
 Prerequisites (Fill in with actuals)
 -------------
 
-- [Postman API Client](https://www.postman.com/product/rest-client/)
+- [Download Postman API Client](https://www.postman.com/product/rest-client/)
 OR 
-CURL from command line
+Use CURL from command line
 OR 
-Your HTTP Request library of choice (Httpie, Python Requests, etc.)
+Leverage your HTTP Request library of choice (Httpie, Python Requests, etc.)
 
-**Note:** Special thing to keep in mind lest you screw up.
+**Note:** Choose your favorite flavor to make API requests.
 
 
-Data Model
+The Data Model
 ---------------
 ![data-model](https://raw.githubusercontent.com/airboyd/burn_pit/main/burn-pit-data-model.png)
 
@@ -54,15 +53,11 @@ Data Model
 
 Getting Started with the API
 ---------------
-1. Download Postman
+1. Download Postman [Postman API Client](https://www.postman.com/product/rest-client/)
 
-[Postman API Client](https://www.postman.com/product/rest-client/)
+2. View GraphQL API Documentation https://documenter.getpostman.com/view/2502975/TVssk8rA
 
-2. View GraphQL API Documentation
-
-https://documenter.getpostman.com/view/2502975/TVssk8rA
-
-3. Download Postman Collection from link above
+3. Run collection in Postman using link above to launch desktop application once installed.
 
 4. Run individual API calls to Create, Read, Update and Destroy the data you need into / out of the Pyrograph.
 
@@ -73,10 +68,10 @@ So you wanna clone this repo?
 
 ```bash
 # Get the latest snapshot
-git clone https://github.com/sahat/hackathon-starter.git myproject
+git clone https://github.com/airboyd/burn_pit.git YuhrProjectNameGoesHere
 
 # Change directory
-cd myproject
+cd YuhrProjectNameGoesHere
 
 
 Contributing
