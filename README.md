@@ -1,4 +1,4 @@
-![Test Image 7](https://github.com/airboyd/burn_pit/master/fireball.png)
+![fire](https://raw.githubusercontent.com/airboyd/burn_pit/main/fireball.png)
 
 # Pyrograph
 # Smoke-Pit
