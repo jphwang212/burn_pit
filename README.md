@@ -25,16 +25,6 @@ Mary is a journalist who is writing a feature article about burn pits and the ri
 She understands the premise of burn pits based on summary research but wants to do a deeper dive and explore / verify new links and relationships that will help her write a story that gets picked up and distributed.
 
 
-Several research projects done by Mary suggested that Flamingos thrive better when there are abundant water bodies for their habitat.
-
-Her team got approval for expanding the water source for the Flamingos in the San Francisco Zoo, and her team is ready for a trip to San Francisco with Mary remotely monitoring the progress of the team.
-
-Her teammates wish to stay close to the Golden Gate Bridge so that they could cycle around the Golden gate, enjoy the breeze, and the sunrise every morning.
-
-Let’s help them find a hotel which is within a reasonable distance from the Golden Gate Bridge, and we’ll do so using Dgraph’s geolocation functions.
-
-
-
 Features
 --------
 
