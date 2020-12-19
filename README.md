@@ -54,10 +54,9 @@ cd myproject
 # Install NPM dependencies
 npm install
 
+###The Data Model
 
-### The Data Model
 Example Neo4J Cypher language Query to create basic nodes and edges
-
 ```
 CREATE
   (`0` :`Burn Pit` {Name:"Camp Fallujah",lat:'33.355026',lng:'43.783337'}) ,
@@ -67,8 +66,8 @@ CREATE
   (`1`)-[:`Visited` ]->(`0`),
   (`2`)-[:``Burned at`` ]->(`0`),
   (`1`)-[:`Visited` ]->(`4`)
-```
 
+```
 
 Contributing
 ------------
