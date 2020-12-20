@@ -1,4 +1,4 @@
-# hack-map
+# hack-map FE
 
 ## Build Setup
 
@@ -18,3 +18,7 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Description
+
+The main thing is the map which gets its data from a graphql client

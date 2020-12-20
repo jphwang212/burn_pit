@@ -10,6 +10,7 @@
 import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
 import mapNav from "../components/mapNav";
 import { json } from "../countries";
+import flameOn from "../assets/flameOn.svg";
 export default {
   name: "Map",
   components: {
@@ -18,28 +19,12 @@ export default {
   data() {
     return {
       myMap: null,
-
-      polygon: {
-        type: "FeatureCollection",
-        features: [
-          {
-            type: "Feature",
-            geometry: {
-              type: "Point",
-              coordinates: [12.87, 43.1]
-            },
-            properties: {
-              id: "ITA2054",
-              worldview: "all",
-              tilequery: {
-                distance: 0,
-                geometry: "polygon",
-                layer: "boundaries_admin_2"
-              }
-            }
-          }
-        ]
-      }
+      allCountries: [],
+      countryLayerGroup: null,
+      flameIcon: null,
+      allBases: [],
+      baseLayerGroup: null
+      // flameOnIcon
     };
   },
   computed: {
@@ -54,6 +39,12 @@ export default {
     },
     newMultiGeo() {
       return this.$store.getters.newMultiGeo;
+    },
+    countries() {
+      return this.$store.getters.getCountries;
+    },
+    bases() {
+      return this.$store.getters.getBases;
     }
   },
   methods: {
@@ -96,33 +87,43 @@ export default {
 
       this.myMap.fitBounds(polys.getBounds());
     },
-    addCountries() {
-      // debugger;
-      // console.log(json.type);
-      // console.log("features length " + json.features.length);
 
-      if (json.features) {
-        // json.features[1].geometry.coordinates.forEach(geo => {
-        const newCords = this.recurseArr(json.features[0].geometry.coordinates);
-        var polygon = L.polygon(newCords, {
-          color: "red"
-        }).addTo(this.myMap);
-        // });
+    zoomChange() {
+      var zoomlevel = this.myMap.getZoom();
+      if (zoomlevel < 5) {
+        if (!this.myMap.hasLayer(this.allCountries[0])) {
+          this.myMap.addLayer(new L.FeatureGroup(this.allCountries));
+        }
+        if (this.myMap.hasLayer(this.allBases[0])) {
+          this.allBases.forEach(c => {
+            this.myMap.removeLayer(c);
+          });
+        }
+      }
+      if (zoomlevel >= 5) {
+        if (!this.myMap.hasLayer(this.allBases[0])) {
+          this.myMap.addLayer(new L.FeatureGroup(this.allBases));
+        }
+        if (this.myMap.hasLayer(this.allCountries[0])) {
+          this.allCountries.forEach(c => {
+            this.myMap.removeLayer(c);
+          });
+        }
       }
     }
   },
   mounted() {
-    console.log(process.env.MAP_KEY);
+    this.$store.dispatch("getBases");
     this.myMap = L.map("mapid", {
-      center: [38.97649255070067, -76.84675534064796],
-      zoom: 11,
+      center: [26.46488727752, 46.425649305],
+      zoom: 5,
       renderer: L.svg()
     });
     //.setView([51.505, -0.09], 13);
     L.tileLayer(
       "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
       {
-        maxZoom: 5,
+        maxZoom: 15,
         minZoom: 3,
         id: "mapbox/dark-v10", //"mapbox/streets-v11",
         tileSize: 512,
@@ -130,8 +131,9 @@ export default {
         accessToken: process.env.MAP_KEY
       }
     ).addTo(this.myMap);
-    this.addCountries();
+
     this.myMap.on("click", this.getLatLong);
+    this.myMap.on("zoomend", this.zoomChange);
   },
   watch: {
     newGeoNum(newVal, oldVal) {
@@ -143,6 +145,51 @@ export default {
       if (newVal !== oldVal) {
         this.setMultiGeo();
       }
+    },
+    countries(vals, oldVal) {
+      this.countryLayerGroup = new L.FeatureGroup();
+      this.myMap.addLayer(this.countryLayerGroup);
+      json.features.forEach(g => {
+        if (vals[g.properties.name.toLowerCase()]) {
+          const newCords = this.recurseArr(g.geometry.coordinates);
+          this.allCountries.push(
+            L.polygon(newCords, {
+              color: "#e2813b"
+            })
+          );
+        }
+      });
+      this.allCountries.forEach(c => {
+        this.countryLayerGroup.addLayer(c);
+      });
+    },
+    bases(vals, oldVal) {
+      this.baseLayerGroup = new L.FeatureGroup();
+      this.myMap.addLayer(this.baseLayerGroup);
+      debugger;
+      vals.forEach(e => {
+        this.flameIcon = L.icon({
+          iconUrl: flameOn,
+          iconSize: 40
+        });
+        const latlng = e.latLong.map(e => parseFloat(e));
+        if (latlng && latlng.length) {
+          // this.allBases.push(
+          const lat = parseFloat(e.latLong[0]);
+          const long = parseFloat(e.latLong[1]);
+          if (lat && long) {
+            this.allBases.push(
+              L.marker(L.latLng(lat, long), {
+                icon: this.flameIcon
+              }).bindPopup(e.name)
+              // .addTo(this.myMap)
+            );
+          }
+        }
+      });
+      this.allBases.forEach(c => {
+        this.baseLayerGroup.addLayer(c);
+      });
     }
   }
 };
