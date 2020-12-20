@@ -26,23 +26,18 @@ She understands the premise of burn pits based on summary research but wants to 
 Features
 --------
 
-- **Local Authentication** using Email and Password
-- MVC Project Structure
-- Map-based graph visualization
-- Vue.JS
-- Input Form
+- MVC Project structure
+- Mapbox visualization
+- Vue.JS front end
+- Data ingestion capabilities
+- Custom SVG graphics
 
 
-Prerequisites (Fill in with actuals)
+Prerequisites to Run On Your Local Machine
 -------------
 
-- [Download Postman API Client](https://www.postman.com/product/rest-client/)
-OR 
-Use CURL from command line
-OR 
-Leverage your HTTP Request library of choice (Httpie, Python Requests, etc.)
-
-**Note:** Choose your favorite flavor to make API requests.
+- Node
+- NPM
 
 
 The Data Model
