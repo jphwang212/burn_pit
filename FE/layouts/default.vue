@@ -66,33 +66,33 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       clipped: false,
       drawer: false,
       fixed: false,
       items: [
         {
-          icon: "mdi-apps",
-          title: "Welcome",
-          to: "/"
+          icon: 'mdi-apps',
+          title: 'Welcome',
+          to: '/'
         },
         {
-          icon: "mdi-chart-bubble",
-          title: "Inspire",
-          to: "/inspire"
+          icon: 'mdi-map',
+          title: 'Burn Map',
+          to: '/map'
         },
         {
-          icon: "mdi-map",
-          title: "Burn Map",
-          to: "/map"
+          icon: 'mdi-alert',
+          title: 'Incident Report',
+          to: '/incident'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: "burn_pit"
-    };
+      title: 'Burn Pit'
+    }
   }
-};
+}
 </script>
