@@ -1,10 +1,12 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue'
+import Vuex from 'vuex'
 // import api from "../api/generic";
 
-import axios from "axios";
+import axios from 'axios'
+import { json } from '../countries'
+import { recurseArr } from '../utils'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 const state = {
   // [{name: "" id: ''}]
@@ -15,86 +17,93 @@ const state = {
   newMultiGeo: null,
   bases: null,
   countries: null
-};
+}
 
 const getters = {
-  newGeo: state => {
-    return state.newGeo;
+  newGeo: (state) => {
+    return state.newGeo
   },
-  newGeoNum: state => {
-    return state.newGeo;
+  newGeoNum: (state) => {
+    return state.newGeo
   },
-  newMultiGeo: state => {
-    return state.newMultiGeo;
+  newMultiGeo: (state) => {
+    return state.newMultiGeo
   },
-  getCountries: state => {
-    return state.countries;
+  getCountries: (state) => {
+    return state.countries
   },
-  getBases: state => {
-    return state.bases;
+  getBases: (state) => {
+    return state.bases
   }
-};
+}
 
 const actions = {
-  setTime(state, mutations) {
+  setTime (state) {
     if (!state.lastReqTime) {
-      state.lastReqTime = Date.now();
-      return;
+      state.lastReqTime = Date.now()
+      return
     }
     if (state.lastReqTime && state.lastReqTime + 3600000 >= Date.now()) {
       // api.getCreds();
-      state.lastReqTime = Date.now();
+      state.lastReqTime = Date.now()
     } else {
-      console.log("within time for archGis");
+      console.log('within time for archGis')
     }
   },
-  getBases({ state, commit }) {
+  getBases ({ commit }) {
     const query = `query Base {
         base {
             name
             country
             latLong
         }
-    }`;
-    const variables = {};
+    }`
+    const variables = {}
     return axios
-      .post("http://localhost:3002/graphql", {
+      .post('http://localhost:3002/graphql', {
         variables,
         query
       })
-      .then(resp => {
+      .then((resp) => {
         if (resp && resp.data) {
-          console.log(resp.data.data.base);
-          commit("setBases", resp.data.data.base);
+          commit('setBases', resp.data.data.base)
 
-          const countries = {};
+          const countries = {}
 
-          resp.data.data.base.forEach(b => {
-            countries[b.country.toLowerCase()] = 1;
-          });
-          commit("setCountries", countries);
+          resp.data.data.base.forEach((b) => {
+            countries[b.country.toLowerCase()] = 1
+          })
+
+          json.features.forEach((g) => {
+            if (countries[g.properties.name.toLowerCase()]) {
+              countries[g.properties.name.toLowerCase()] = recurseArr(
+                g.geometry.coordinates
+              )
+            }
+          })
+          commit('setCountries', countries)
         }
-      });
+      })
   }
-};
+}
 
 /* eslint no-param-reassign: ["error", { "props": false }] */
 const mutations = {
-  setGeoForMap(state, geo) {
-    state.newGeoNum = Math.random();
-    state.newGeo = geo;
+  setGeoForMap (state, geo) {
+    state.newGeoNum = Math.random()
+    state.newGeo = geo
   },
-  setMultipleGeoForMap(state, geos) {
-    state.newMultiGeoNum = Math.random();
-    state.newMultiGeo = geos;
+  setMultipleGeoForMap (state, geos) {
+    state.newMultiGeoNum = Math.random()
+    state.newMultiGeo = geos
   },
-  setCountries(state, countries) {
-    state.countries = countries;
+  setCountries (state, countries) {
+    state.countries = countries
   },
-  setBases(state, bases) {
-    state.bases = bases;
+  setBases (state, bases) {
+    state.bases = bases
   }
-};
+}
 
 const createStore = () =>
   new Vuex.Store({
@@ -102,5 +111,5 @@ const createStore = () =>
     getters,
     actions,
     mutations
-  });
-export default createStore;
+  })
+export default createStore

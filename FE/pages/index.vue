@@ -2,73 +2,43 @@
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
       <div class="text-center">
-        <logo />
-        <vuetify-logo />
+        <img src="../assets/flameOn.svg" alt="" class="img-size">
       </div>
       <v-card>
         <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
+          Welcome to the Burn Pit
         </v-card-title>
         <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
+          <p>Here we monitor and track burn and hazards material incidents in the US Military</p>
+          <v-card-title >Sources</v-card-title>
           <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
+            Militart Times article on burn pit exposure <a
+              href="https://www.militarytimes.com/news/your-military/2019/12/04/these-maps-can-help-you-figure-out-your-burn-pit-exposure-risk/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              documentation
+              Militart Times
             </a>.
           </p>
           <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
+            Army Public Health Center- Periodic Occupational and Environmental Monitoring Summary (POEMS) <a
+              href="https://phc.amedd.army.mil/topics/envirohealth/hrasm/Pages/POEMS.aspx"
               target="_blank"
               rel="noopener noreferrer"
-              title="chat"
+              title="APHC"
             >
-              discord
+              Army Public Health Center
             </a>.
           </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
+          <!-- <v-row>
+            <v-btn to="/incident">Incident Report</v-btn> <v-spacer /> <v-btn to="/map">Map of Incidents</v-btn>
+          </v-row> -->
         </v-card-text>
         <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
+          <v-btn to="/incident">
+            Incident Report
+          </v-btn> <v-spacer /> <v-btn to="/map">
+            Map of Incidents
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -77,13 +47,12 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
-export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
+export default { 
 }
 </script>
+<style >
+.img-size {
+  height: 200px;
+}
+</style>
