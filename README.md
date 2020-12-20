@@ -68,8 +68,16 @@ git clone https://github.com/airboyd/burn_pit.git YuhrProjectNameGoesHere
 # Change directory
 cd YuhrProjectNameGoesHere
 
+```
 
-Contributing
+Contribution areas to consider
+---------------
+1. Adding data to the graph in order to better serve use cases 1 and 2
+2. Enhancing Map-centric UI to make it easier to navigate and explore
+3. Creating bug requests or feature requests using the issue tracker
+4. Publicizing the project by referencing back if you found it useful
+
+Contribution guidelines
 ------------
 
 If something is unclear, confusing, or needs to be refactored, please let us know. 
