@@ -2,7 +2,6 @@ import { ApolloServer } from "apollo-server-express";
 import * as bodyParser from "body-parser";
 import cors from "cors";
 // https://medium.com/@th.guibert/basic-apollo-express-graphql-api-with-typescript-2ee021dea2c
-// https://www.youtube.com/watch?v=uCbFMZYQbxE n+1 problem use dataloader
 import express from "express";
 import { createServer } from "http";
 import mongoose from "mongoose";
