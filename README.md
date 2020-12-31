@@ -46,22 +46,9 @@ Prerequisites to Run On Your Local Machine
 - NPM
 
 
-The Data Model
+A sketch of the data model
 ---------------
 ![data-model](https://raw.githubusercontent.com/airboyd/burn_pit/main/burn-pit-data-model.png)
-
-
-
-Getting Started with the API
----------------
-1. Download Postman [Postman API Client](https://www.postman.com/product/rest-client/)
-
-2. View GraphQL API Documentation https://documenter.getpostman.com/view/2502975/TVssk8rA
-
-3. Run collection in Postman using link above to launch desktop application once installed.
-
-4. Run individual API calls to Create, Read, Update and Destroy the data you need into / out of the Pyrograph.
-
 
 
 So you wanna clone this repo?
