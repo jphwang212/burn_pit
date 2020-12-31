@@ -28,6 +28,9 @@ Mary is a journalist who is writing a feature article about burn pits and the ri
 
 She understands the premise of burn pits based on summary research but wants to do a deeper dive and explore / verify new links and relationships that will help her write a story that gets picked up and distributed.
 
+### The Goal
+
+Pyrograph is designed to provide open data to veterans and the public about open burn pit activity experienced by US Servicemembers. By using a graph-based architecture, our hope is that new connections and relations can be extracted from this problem set. 
 
 Features
 --------
