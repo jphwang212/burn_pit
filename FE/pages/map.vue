@@ -60,31 +60,9 @@ export default {
       }
     },
     bases (vals) {
-      this.baseLayerGroup = new L.FeatureGroup()
-      this.myMap.addLayer(this.baseLayerGroup)
-      vals.forEach((e) => {
-        this.flameIcon = L.icon({
-          iconUrl: flameOn,
-          iconSize: 40
-        })
-        const latlng = e.latLong.map(e => parseFloat(e))
-        if (latlng && latlng.length) {
-          // this.allBases.push(
-          const lat = parseFloat(e.latLong[0])
-          const long = parseFloat(e.latLong[1])
-          if (lat && long) {
-            this.allBases.push(
-              L.marker(L.latLng(lat, long), {
-                icon: this.flameIcon
-              }).bindPopup(e.name)
-              // .addTo(this.myMap)
-            )
-          }
-        }
-      })
-      this.allBases.forEach((c) => {
-        this.baseLayerGroup.addLayer(c)
-      })
+      if (vals) {
+        this.populatedBases(vals)
+      }
     }
   },
   mounted () {
@@ -109,6 +87,12 @@ export default {
 
     this.myMap.on('click', this.getLatLong)
     this.myMap.on('zoomend', this.zoomChange)
+    // if (!this.bases) {
+    //   this.$store.dispatch('getBases')
+    // } 
+    // else {
+    //   this.populatedBases(this.bases)
+    // }
   },
   methods: {
     getLatLong (e) {
@@ -146,6 +130,33 @@ export default {
       popup.setLatLng(bounds.getCenter())
       popup.setContent(popupContent)
       this.myMap.openPopup(popup)
+    },
+    populatedBases (vals) {
+      this.baseLayerGroup = new L.FeatureGroup()
+      this.myMap.addLayer(this.baseLayerGroup)
+      vals.forEach((e) => {
+        this.flameIcon = L.icon({
+          iconUrl: flameOn,
+          iconSize: 40
+        })
+        const latlng = e.latLong.map(e => parseFloat(e))
+        if (latlng && latlng.length) {
+          // this.allBases.push(
+          const lat = parseFloat(e.latLong[0])
+          const long = parseFloat(e.latLong[1])
+          if (lat && long) {
+            this.allBases.push(
+              L.marker(L.latLng(lat, long), {
+                icon: this.flameIcon
+              }).bindPopup(e.name)
+              // .addTo(this.myMap)
+            )
+          }
+        }
+      })
+      this.allBases.forEach((c) => {
+        this.baseLayerGroup.addLayer(c)
+      })
     }
   }
 }
