@@ -1,5 +1,8 @@
 # hack-map FE
 
+![Burnpit Screenshot](./burnpit-pic.PNG)
+
+
 ## Build Setup
 
 ```bash
