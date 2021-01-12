@@ -10,6 +10,12 @@ Vets Hackathon December 18-20 in the year of our dark lord, 2020
 > [**“I'm not a doctor, I'm not a scientist. But, I'm also not an idiot. If you live next to a toxic smoke plume filled with cancer-causing elements, and you're breathing it in day in and day out, it's going to make you sick," Stewart said, regarding what many veterans have faced since returning from war.”**](https://www.npr.org/2020/09/16/913376758/jon-stewart-uses-his-celebrity-to-bring-attention-to-vets-exposed-to-burn-pits)<br>
 > — Jon Stewart
 
+Burn pits were used during Global War on Terror military campaigns, according to DoD sources and there are a number of sites listed in the pyrograph and in official documentation from the Army Public Health Center and the US Department of Veteran's Affairs.
+
+A burn pit is an open-air location where a wide array of materials from war were burned, often by using JP-8 fuel as an accelerant. Following the US Military's ban of burn pits and a number of health and environmental studies and health effects to veterans who returned, it's important to help veterans facing health issues to use rich data about burn pits to support their road back to health and to inform future research efforts.
+
+
+
 ### Use Case 1
 
 Joe is a veteran who separated from the military 6 years ago and is looking for more information about burn pit exposure, having visited multiple deployed locations.
@@ -22,6 +28,9 @@ Mary is a journalist who is writing a feature article about burn pits and the ri
 
 She understands the premise of burn pits based on summary research but wants to do a deeper dive and explore / verify new links and relationships that will help her write a story that gets picked up and distributed.
 
+### The Goal
+
+Pyrograph is designed to provide open data to veterans and the public about open burn pit activity experienced by US Servicemembers. By using a graph-based architecture, our hope is that new connections and relations can be extracted from this problem set. 
 
 Features
 --------
@@ -40,22 +49,9 @@ Prerequisites to Run On Your Local Machine
 - NPM
 
 
-The Data Model
+A sketch of the data model
 ---------------
 ![data-model](https://raw.githubusercontent.com/airboyd/burn_pit/main/burn-pit-data-model.png)
-
-
-
-Getting Started with the API
----------------
-1. Download Postman [Postman API Client](https://www.postman.com/product/rest-client/)
-
-2. View GraphQL API Documentation https://documenter.getpostman.com/view/2502975/TVssk8rA
-
-3. Run collection in Postman using link above to launch desktop application once installed.
-
-4. Run individual API calls to Create, Read, Update and Destroy the data you need into / out of the Pyrograph.
-
 
 
 So you wanna clone this repo?
