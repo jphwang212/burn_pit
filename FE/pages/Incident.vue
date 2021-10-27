@@ -2,10 +2,7 @@
   <div>
     <v-form>
       <v-container>
-        <v-text-field
-          class="incidentName"
-          label="Incident Name"
-        />
+        <v-text-field class="incidentName" label="Incident Name" />
         <v-row>
           <v-col cols="12" lg="6">
             <v-menu
@@ -83,7 +80,6 @@
 <script>
 /* eslint-disable no-undef */
 import { json } from '../countries'
-import { recurseArr } from '../utils'
 export default {
   name: 'Incident',
   components: {},
@@ -114,7 +110,7 @@ export default {
         if (this.map.hasLayer(this.currentPolygon)) {
           this.map.removeLayer(this.currentPolygon)
         }
-        this.currentPolygon = L.polygon(recurseArr(val.geometry.coordinates), {
+        this.currentPolygon = L.polygon(val.geometry.coordinates, {
           color: '#e2813b'
         })
         this.currentPolygon.on('click', this.polyClick)
@@ -138,7 +134,6 @@ export default {
     end (e) {
       console.log(e)
     }
-
   },
   mounted () {
     this.map = L.map('mapId', {
@@ -192,7 +187,7 @@ export default {
   z-index: 0;
 }
 
-.incidentName{
-    width: 500px;
+.incidentName {
+  width: 500px;
 }
 </style>
