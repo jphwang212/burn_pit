@@ -40,6 +40,9 @@ export default {
       }
     ]
   },
+  server: {
+    port: 3004 // default: 3000
+  },
 
   //   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
   // <link

@@ -34,13 +34,14 @@ export default {
     countries () {
       return this.$store.getters.shownCountries
     }
-
   },
   watch: {
     countries (countries) {
       if (countries) {
         if (this.countryLayerGroup) {
-          this.countryLayerGroup.eachLayer((layer) => { this.countryLayerGroup.removeLayer(layer) })
+          this.countryLayerGroup.eachLayer((layer) => {
+            this.countryLayerGroup.removeLayer(layer)
+          })
           this.allCountries.forEach((c) => {
             this.myMap.removeLayer(c)
           })
@@ -55,7 +56,10 @@ export default {
               color: '#e2813b'
             })
             const bounds = await newPolygon.getBounds()
-            this.countryNames.push({ name: country.name.toUpperCase(), bounds })
+            this.countryNames.push({
+              name: country.name.toUpperCase(),
+              bounds
+            })
             this.allCountries.push(newPolygon)
           } else {
             console.log(country)
@@ -63,7 +67,11 @@ export default {
         })
       } else {
         this.allCountries = []
-        this.countryLayerGroup.eachLayer((layer) => { this.countryLayerGroup.removeLayer(layer) })
+        if (this.countryLayerGroup) {
+          this.countryLayerGroup.eachLayer((layer) => {
+            this.countryLayerGroup.removeLayer(layer)
+          })
+        }
       }
     },
     bases (vals) {
@@ -73,29 +81,57 @@ export default {
     }
   },
   mounted () {
-    this.$store.dispatch('getBases')
-    this.myMap = L.map('mapid', {
-      center: [26.46488727752, 46.425649305],
-      zoom: 5,
-      renderer: L.svg()
-    })
-    // .setView([51.505, -0.09], 13);
-    L.tileLayer(
-      'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
-      {
-        maxZoom: 15,
-        minZoom: 3,
-        id: 'mapbox/dark-v10', // "mapbox/streets-v11",
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken: process.env.MAP_KEY
-      }
-    ).addTo(this.myMap)
-
-    this.myMap.on('click', this.getLatLong)
-    this.myMap.on('zoomend', this.zoomChange)
+    this.clearAll()
+    this.initMap()
+    if (!this.$store.getters.shownBases) {
+      this.$store.dispatch('getBases')
+    } else {
+      this.populatedBases(this.$store.getters.shownBases)
+    }
   },
   methods: {
+    clearAll () {
+      if (this.countryLayerGroup) {
+        this.countryLayerGroup.eachLayer((layer) => {
+          this.countryLayerGroup.removeLayer(layer)
+        })
+        this.allCountries.forEach((c) => {
+          this.myMap.removeLayer(c)
+        })
+        this.allCountries = []
+      }
+      if (this.baseLayerGroup) {
+        this.baseLayerGroup.eachLayer((layer) => {
+          this.baseLayerGroup.removeLayer(layer)
+        })
+        this.allBases.forEach((b) => {
+          this.myMap.removeLayer(b)
+        })
+        this.allBases = []
+      }
+    },
+    initMap () {
+      this.myMap = L.map('mapid', {
+        center: [26.46488727752, 46.425649305],
+        zoom: 5,
+        renderer: L.svg()
+      })
+      // .setView([51.505, -0.09], 13);
+      L.tileLayer(
+        'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
+        {
+          maxZoom: 15,
+          minZoom: 3,
+          id: 'mapbox/dark-v10', // "mapbox/streets-v11",
+          tileSize: 512,
+          zoomOffset: -1,
+          accessToken: process.env.MAP_KEY
+        }
+      ).addTo(this.myMap)
+
+      this.myMap.on('click', this.getLatLong)
+      this.myMap.on('zoomend', this.zoomChange)
+    },
     getLatLong (e) {
       console.log(e.latlng)
     },
@@ -131,7 +167,12 @@ export default {
     },
     populatedBases (vals) {
       if (this.baseLayerGroup) {
-        this.baseLayerGroup.eachLayer((layer) => { this.baseLayerGroup.removeLayer(layer) })
+        this.baseLayerGroup.eachLayer((layer) => {
+          this.baseLayerGroup.removeLayer(layer)
+        })
+        this.allBases.forEach((b) => {
+          this.myMap.removeLayer(b)
+        })
         this.allBases = []
       }
       this.baseLayerGroup = new L.FeatureGroup()
@@ -149,7 +190,8 @@ export default {
             this.allBases.push(
               L.marker(L.latLng(lat, long), {
                 icon: this.flameIcon
-              }).bindPopup(`<div class="card card-1"><h1>${e.name}</h1><h2>${e.startDate}- ${e.stopDate}</h2><h3>From: <a href="${e.sourceUrl}" target="_blank"
+              })
+                .bindPopup(`<div class="card card-1"><h1>${e.name}</h1><h2>${e.startDate}- ${e.stopDate}</h2><h3>From: <a href="${e.sourceUrl}" target="_blank"
                 alt="${e.source}">${e.source}</a> </h3></div>`)
             )
           }

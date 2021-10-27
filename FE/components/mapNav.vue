@@ -30,8 +30,6 @@
 </template>
 <script>
 export default {
-  components: {
-  },
   props: ['myMap', 'countries'],
   data () {
     return {
@@ -64,7 +62,9 @@ export default {
       this.$store.commit('selectedYear', val)
     }
   },
-  mounted () {},
+  mounted () {
+    this.clear()
+  },
   methods: {
     handleNavClick (item) {
       this.myMap.fitBounds(item.bounds)
@@ -99,7 +99,7 @@ export default {
 .fade-enter-active {
   animation: go 2s;
 }
-.c-select{
+.c-select {
   margin-top: 20px !important;
 }
 </style>
