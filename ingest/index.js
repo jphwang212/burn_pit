@@ -1,7 +1,5 @@
 const csv = require("csvtojson");
 var fs = require("fs");
-
-var fs = require("fs");
 try {
   const axios = require("axios");
   const csvFilePath = "BurnpitLocations.csv";
@@ -9,11 +7,9 @@ try {
   csv()
     .fromFile(csvFilePath)
     .then((jsonObj) => {
-      const json = JSON.stringify(jsonObj);
-
       jsonObj.forEach((e) => {
-        const query = `mutation AddBase($name: String, $latLong: [String], $country: String, $startDate: String, $stopDate: String ) {
-                addBase(name: $name, latLong: $latLong, country: $country, startDate: $startDate, stopDate: $stopDate ){
+        const query = `mutation AddBase($name: String, $latLong: [String], $country: String, $startDate: String, $stopDate: String, $source: String, $sourceUrl: String ) {
+                addBase(name: $name, latLong: $latLong, country: $country, startDate: $startDate, stopDate: $stopDate, source: $source, sourceUrl: $sourceUrl ){
                     name
                     country
                 }
@@ -24,6 +20,8 @@ try {
           latLong: e["Lat, Long"].replace(/\s/g, "").split(","),
           startDate: e.Start,
           stopDate: e.Stop,
+          source: 'Army Public Health Center',
+          sourceUrl: 'https://phc.amedd.army.mil/topics/envirohealth/hrasm/Pages/POEMS.aspx'
         };
         axios
           .post("http://localhost:3002/graphql", {
@@ -31,7 +29,7 @@ try {
             query,
           })
           .then((res) => {
-            console.log(`statusCode: ${res.statusCode}`);
+            console.log(`statusCode: ${res.status}`);
           })
           .catch((error) => {
             console.error(error);

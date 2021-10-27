@@ -16,7 +16,8 @@ const state = {
   newMultiGeoNum: null,
   newMultiGeo: null,
   bases: null,
-  countries: null
+  countries: null,
+  selectedYear: null
 }
 
 const getters = {
@@ -34,6 +35,57 @@ const getters = {
   },
   getBases: (state) => {
     return state.bases
+  },
+
+  shownCountries: (state, getters) => {
+    if (getters.shownBases) {
+      const countries = {}
+      getters.shownBases.forEach((base) => {
+        countries[base.country] = { name: base.country, cords: state.countries[base.country.toLowerCase()] }
+      })
+      return Object.keys(countries).map((countryKey) => {
+        return countries[countryKey]
+      })
+    } else {
+      return null
+    }
+  },
+  shownBases: (state) => {
+    if (state.selectedYear) {
+      const filteredBases = state.bases.filter((base) => {
+        const start = base.startDate.split('/')[2] <= state.selectedYear
+        const stop = state.selectedYear <= base.stopDate.split('/')[2]
+        if (start && stop) {
+          return base
+        }
+      })
+      return filteredBases
+    } else {
+      return state.bases
+    }
+  },
+  years: (state) => {
+    if (state.bases) {
+      let max, min
+      state.bases.forEach((base) => {
+        const lmin = base.startDate.split('/')[2]
+        const lmax = base.stopDate.split('/')[2]
+        if (!min || min > lmin) {
+          min = lmin
+        }
+        if (!max || max < lmax) {
+          max = lmax
+        }
+      })
+      const years = []
+      const count = max - min
+      for (let i = 0; i < count; i++) {
+        years.push(parseInt(min, 10) + i)
+      }
+      return years
+    } else {
+      return []
+    }
   }
 }
 
@@ -56,6 +108,10 @@ const actions = {
             name
             country
             latLong
+            startDate
+            stopDate
+            source
+            sourceUrl
         }
     }`
     const variables = {}
@@ -75,10 +131,20 @@ const actions = {
           })
 
           json.features.forEach((g) => {
-            if (countries[g.properties.name.toLowerCase()]) {
-              countries[g.properties.name.toLowerCase()] = recurseArr(
-                g.geometry.coordinates
-              )
+            if (typeof g.properties.name === 'string') {
+              if (countries[g.properties.name.toLowerCase()]) {
+                countries[g.properties.name.toLowerCase()] = recurseArr(
+                  g.geometry.coordinates
+                )
+              }
+            } else {
+              g.properties.name.forEach((name) => {
+                if (countries[name.toLowerCase()]) {
+                  countries[name.toLowerCase()] = recurseArr(
+                    g.geometry.coordinates
+                  )
+                }
+              })
             }
           })
           commit('setCountries', countries)
@@ -102,6 +168,9 @@ const mutations = {
   },
   setBases (state, bases) {
     state.bases = bases
+  },
+  selectedYear (state, year) {
+    state.selectedYear = year
   }
 }
 

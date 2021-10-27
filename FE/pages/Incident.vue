@@ -130,7 +130,7 @@ export default {
       }
     },
     date (val) {
-      this.dateFormatted = this.formatDate(this.date)
+      this.dateFormatted = this.formatDate(val)
     },
     start (e) {
       console.log(e)
