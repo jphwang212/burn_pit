@@ -24,6 +24,8 @@ export const Base = mongoose.model(
     country: String,
     startDate: String,
     stopDate: String,
+    source: String,
+    sourceUrl: String,
     dateCreated: Date,
     dateModified: Date,
   })
@@ -37,6 +39,8 @@ export const Fob = mongoose.model(
     country: String,
     startDate: String,
     stopDate: String,
+    source: String,
+    sourceUrl: String,
     dateCreated: Date,
     dateModified: Date,
   })
@@ -72,20 +76,6 @@ export const Resolvers: IResolvers = {
       const f = await Fob.find({ country: country });
       return f;
     },
-
-    // Content: {
-    // comments: async (root) => {
-    //   if (root.commentIds) {
-    //     const comments = await Comment.find({ id: root.commentIds });
-    //     return comments;
-    //   } else {
-    //     return [];
-    //   }
-    // },
-    // likes: async (root) => {
-    //   return root.likeIds;
-    // },
-    // },
   },
 
   Mutation: {
@@ -100,26 +90,30 @@ export const Resolvers: IResolvers = {
 
       return u;
     },
-    addBase: async (_, { name, latLong, country, startDate, stopDate }) => {
+    addBase: async (_, { name, latLong, country, startDate, stopDate, source, sourceUrl }) => {
       const b = new Base({
         name,
         latLong,
         country,
         startDate,
         stopDate,
+        source, 
+        sourceUrl
       });
       await b.save();
 
       return b;
     },
 
-    addFob: async (_, { name, latLong, country, startDate, stopDate }) => {
+    addFob: async (_, { name, latLong, country, startDate, stopDate, source, sourceUrl }) => {
       const f = new Fob({
         name,
         latLong,
         country,
         startDate,
         stopDate,
+        source, 
+        sourceUrl
       });
       await f.save();
 

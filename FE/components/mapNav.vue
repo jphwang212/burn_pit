@@ -1,7 +1,20 @@
 <template>
   <v-toolbar>
     <v-toolbar-title>{{ title }}</v-toolbar-title>
-
+    <v-spacer />
+    <v-select
+      v-model="selectedYear"
+      :items="years"
+      label="Selected Year"
+      item-text="name"
+      return-object
+      single-line
+      class="c-select"
+    />
+    <v-spacer />
+    <v-btn dark color="white" class="black--text" @click="clear">
+      Clear
+    </v-btn>
     <v-spacer />
     <v-select
       v-model="selectedCountry"
@@ -27,7 +40,8 @@ export default {
       fadeInDuration: 1000,
       fadeOutDuration: 1000,
       maxFadeDuration: 1500,
-      selectedCountry: 'All'
+      selectedCountry: 'All',
+      selectedYear: 'All'
       // https://tigerweb.geo.census.gov/arcgis/sdk/rest/index.html#/Query_Map_Service_Layer/02ss0000000r000000/
       // http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StateCityHighway_USA/MapServer/1/40
     }
@@ -35,6 +49,9 @@ export default {
   computed: {
     title () {
       return 'Burn Map'
+    },
+    years () {
+      return this.$store.getters.years
     }
   },
   watch: {
@@ -42,12 +59,20 @@ export default {
       if (val && val !== 'All') {
         this.myMap.fitBounds(val.bounds)
       }
+    },
+    selectedYear (val) {
+      this.$store.commit('selectedYear', val)
     }
   },
   mounted () {},
   methods: {
     handleNavClick (item) {
       this.myMap.fitBounds(item.bounds)
+    },
+    clear () {
+      this.selectedYear = null
+      this.$store.commit('selectedYear', null)
+      this.selectedCountry = 'All'
     }
   }
 }

@@ -28,35 +28,42 @@ export default {
     }
   },
   computed: {
-    countries () {
-      return this.$store.getters.getCountries
-    },
     bases () {
-      return this.$store.getters.getBases
+      return this.$store.getters.shownBases
+    },
+    countries () {
+      return this.$store.getters.shownCountries
     }
+
   },
   watch: {
-    countries (vals) {
-      if (vals) {
+    countries (countries) {
+      if (countries) {
+        if (this.countryLayerGroup) {
+          this.countryLayerGroup.eachLayer((layer) => { this.countryLayerGroup.removeLayer(layer) })
+          this.allCountries.forEach((c) => {
+            this.myMap.removeLayer(c)
+          })
+          this.allCountries = []
+        }
         this.countryLayerGroup = new L.FeatureGroup()
         this.myMap.addLayer(this.countryLayerGroup)
-        Object.keys(vals).forEach(async (c) => {
-          if (vals[c] !== 1) {
-            const newPolygon = L.polygon(vals[c], {
+        console.log(countries.length)
+        countries.forEach(async (country) => {
+          if (country.cords !== 1) {
+            const newPolygon = L.polygon(country.cords, {
               color: '#e2813b'
             })
-            // newPolygon.on('click', this.polyClick)
             const bounds = await newPolygon.getBounds()
-            this.countryNames.push({ name: c.toUpperCase(), bounds })
-
+            this.countryNames.push({ name: country.name.toUpperCase(), bounds })
             this.allCountries.push(newPolygon)
+          } else {
+            console.log(country)
           }
         })
-        //   }
-        // })
-        this.allCountries.forEach((c) => {
-          this.countryLayerGroup.addLayer(c)
-        })
+      } else {
+        this.allCountries = []
+        this.countryLayerGroup.eachLayer((layer) => { this.countryLayerGroup.removeLayer(layer) })
       }
     },
     bases (vals) {
@@ -87,17 +94,9 @@ export default {
 
     this.myMap.on('click', this.getLatLong)
     this.myMap.on('zoomend', this.zoomChange)
-    // if (!this.bases) {
-    //   this.$store.dispatch('getBases')
-    // } 
-    // else {
-    //   this.populatedBases(this.bases)
-    // }
   },
   methods: {
     getLatLong (e) {
-      // e.preventDefault()
-      // preventDefault()
       console.log(e.latlng)
     },
     zoomChange () {
@@ -111,8 +110,7 @@ export default {
             this.myMap.removeLayer(c)
           })
         }
-      }
-      if (zoomlevel >= 5) {
+      } else if (zoomlevel >= 5) {
         if (!this.myMap.hasLayer(this.allBases[0])) {
           this.myMap.addLayer(new L.FeatureGroup(this.allBases))
         }
@@ -132,6 +130,10 @@ export default {
       this.myMap.openPopup(popup)
     },
     populatedBases (vals) {
+      if (this.baseLayerGroup) {
+        this.baseLayerGroup.eachLayer((layer) => { this.baseLayerGroup.removeLayer(layer) })
+        this.allBases = []
+      }
       this.baseLayerGroup = new L.FeatureGroup()
       this.myMap.addLayer(this.baseLayerGroup)
       vals.forEach((e) => {
@@ -141,15 +143,14 @@ export default {
         })
         const latlng = e.latLong.map(e => parseFloat(e))
         if (latlng && latlng.length) {
-          // this.allBases.push(
           const lat = parseFloat(e.latLong[0])
           const long = parseFloat(e.latLong[1])
           if (lat && long) {
             this.allBases.push(
               L.marker(L.latLng(lat, long), {
                 icon: this.flameIcon
-              }).bindPopup(e.name)
-              // .addTo(this.myMap)
+              }).bindPopup(`<div class="card card-1"><h1>${e.name}</h1><h2>${e.startDate}- ${e.stopDate}</h2><h3>From: <a href="${e.sourceUrl}" target="_blank"
+                alt="${e.source}">${e.source}</a> </h3></div>`)
             )
           }
         }

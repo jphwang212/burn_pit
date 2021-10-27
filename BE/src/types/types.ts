@@ -31,6 +31,8 @@ export const Types = gql`
     country: String
     startDate: String
     stopDate: String
+    source: String 
+    sourceUrl: String
     dateCreated: Date
     dateModified: Date
   }
@@ -41,6 +43,8 @@ export const Types = gql`
     country: String
     startDate: String
     stopDate: String
+    source: String 
+    sourceUrl: String
     dateCreated: Date
     dateModified: Date
   }
@@ -59,6 +63,8 @@ export const Types = gql`
       country: String
       startDate: String
       stopDate: String
+      source: String 
+      sourceUrl: String
     ): Base!
 
     addFob(
@@ -67,6 +73,8 @@ export const Types = gql`
       country: String
       startDate: String
       stopDate: String
+      source: String 
+      sourceUrl: String
     ): Fob!
   }
 `;
