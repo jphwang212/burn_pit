@@ -1,32 +1,64 @@
 <template>
-  <v-toolbar>
-    <v-toolbar-title>{{ title }}</v-toolbar-title>
-    <v-spacer />
-    <v-select
-      v-model="selectedYear"
-      :items="years"
-      label="Selected Year"
-      item-text="name"
-      return-object
-      single-line
-      class="c-select"
-    />
-    <v-spacer />
-    <v-btn dark color="white" class="black--text" @click="clear">
-      Clear
-    </v-btn>
-    <v-spacer />
-    <v-select
-      v-model="selectedCountry"
-      :items="countries"
-      label="Countries"
-      item-text="name"
-      return-object
-      single-line
-      class="c-select"
-    />
+  <div>
+    <v-toolbar v-if="!$vuetify.breakpoint.mobile">
+      <v-toolbar-title v-if="!$vuetify.breakpoint.mobile">
+        {{ title }}
+      </v-toolbar-title>
+      <v-spacer />
+      <template v-if="!$vuetify.breakpoint.mobile" class="flex">
+        <v-select
+          v-model="selectedYear"
+          :items="years"
+          label="Selected Year"
+          item-text="name"
+          return-object
+          single-line
+          class="c-select"
+        />
+        <v-spacer />
+        <v-btn dark color="white" class="black--text" @click="clear">
+          Clear
+        </v-btn>
+        <v-spacer />
+        <v-select
+          v-model="selectedCountry"
+          :items="countries"
+          label="Countries"
+          item-text="name"
+          return-object
+          single-line
+          class="c-select"
+        />
+      </template>
+    </v-toolbar>
+    <div v-else>
+      <div class="stack">
+        <v-select
+          v-model="selectedYear"
+          :items="years"
+          label="Selected Year"
+          item-text="name"
+          return-object
+          single-line
+          class="c-select"
+        />
+        <v-select
+          v-model="selectedCountry"
+          :items="countries"
+          label="Countries"
+          item-text="name"
+          return-object
+          single-line
+          class="c-select"
+        />
+      </div>
+      <v-spacer />
+      <v-btn dark color="white" class="black--text" @click="clear">
+        Clear
+      </v-btn>
+    </div>
     <div id="map" />
-  </v-toolbar>
+  </div>
 </template>
 <script>
 export default {
@@ -101,5 +133,15 @@ export default {
 }
 .c-select {
   margin-top: 20px !important;
+}
+.stack{
+  display: flex;
+  flex-direction: column;
+}
+.flex{
+  display: flex
+}
+.leaflet-top{
+  z-index: 1 !important;
 }
 </style>
