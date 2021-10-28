@@ -1,5 +1,4 @@
-const csv = require("csvtojson");
-var fs = require("fs");
+require('dotenv').config()
 try {
   const axios = require("axios");
   const csvFilePath = "BurnpitLocations.csv";
@@ -24,7 +23,7 @@ try {
           sourceUrl: 'https://phc.amedd.army.mil/topics/envirohealth/hrasm/Pages/POEMS.aspx'
         };
         axios
-          .post("http://localhost:3002/graphql", {
+          .post(`${process.env.BE_URL}/graphql`, {
             variables,
             query,
           })
