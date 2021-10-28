@@ -1,3 +1,4 @@
+require('dotenv').config()
 import { ApolloServer } from "apollo-server-express";
 import * as bodyParser from "body-parser";
 import cors from "cors";
@@ -9,8 +10,9 @@ import mongoose from "mongoose";
 import { Resolvers } from "./resolvers/Resolvers";
 import { Types } from "./types/types";
 
-mongoose.connect("mongodb://localhost:27017/personalityApp", {
+mongoose.connect("mongodb://localhost:27017/map", {
   useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 mongoose.set("debug", true);
 
@@ -20,13 +22,13 @@ mongoose.set("debug", true);
     typeDefs: [Types],
     resolvers: [Resolvers],
   });
-  app.use("*", cors());
+  app.use(cors());
   app.use(bodyParser.json({ limit: "50mb" }));
   server.applyMiddleware({ app, path: "/graphql" });
   const httpServer = createServer(app);
-  httpServer.listen({ port: 3002 }, (): void =>
+  httpServer.listen({ port: process.env.PORT }, (): void =>
     console.log(
-      `\n🚀   GraphQL is now running on http://localhost:3002/graphql`
+      `\n🚀   GraphQL is now running on http://localhost:${process.env.PORT}/graphql`
     )
   );
 })();
