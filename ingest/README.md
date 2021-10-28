@@ -12,7 +12,7 @@ run `node index.js`
 
 -Convert it into a JSON object, look at "bp.json" for an example
 
--The send a mutation call to graphql running on port 3002
+-The send a mutation call to graphql running on port 3004
 
 
 ### The Data
