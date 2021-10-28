@@ -1,0 +1,418 @@
+[
+  {
+    "Type": "AFB",
+    "Country": "Afghanistan",
+    "Name": "Bagram",
+    "Lat, Long": "34.946111, 69.265",
+    "Start": "11/9/2006",
+    "Stop": "4/1/2011"
+  },
+  {
+    "Type": "Camp",
+    "Country": "Afghanistan",
+    "Name": "Bastion",
+    "Lat, Long": "31.851667, 65.197778",
+    "Start": "9/1/2006",
+    "Stop": "12/31/2009"
+  },
+  {
+    "Type": "Camp",
+    "Country": "Afghanistan",
+    "Name": "Black Horse",
+    "Lat, Long": "34.519722, 69.345",
+    "Start": "3/1/2006",
+    "Stop": "10/31/2010"
+  },
+  {
+    "Type": "FOB",
+    "Country": "Afghanistan",
+    "Name": "Bostick-Monti",
+    "Lat, Long": "35.209167, 73.521667",
+    "Start": "2/9/2006",
+    "Stop": "7/31/2012"
+  },
+  {
+    "Type": "Camp",
+    "Country": "Afghanistan",
+    "Name": "Leatherneck",
+    "Lat, Long": "31.863889, 64.208056",
+    "Start": "12/30/2009",
+    "Stop": "6/24/2014"
+  },
+  {
+    "Type": "Camp",
+    "Country": "Afghanistan",
+    "Name": "Dwyer",
+    "Lat, Long": "31.101111, 64.067222",
+    "Start": "1/1/2009",
+    "Stop": "8/31/2011"
+  },
+  {
+    "Type": "",
+    "Country": "Afghanistan",
+    "Name": "Clark",
+    "Lat, Long": "33.341667, 69.736389",
+    "Start": "9/1/2006",
+    "Stop": "8/14/2010"
+  },
+  {
+    "Type": "",
+    "Country": "Afghanistan",
+    "Name": "Farah",
+    "Lat, Long": "32.363667, 62.1675",
+    "Start": "5/2/2004",
+    "Stop": "9/18/2013"
+  },
+  {
+    "Type": "FOB",
+    "Country": "Afghanistan",
+    "Name": "Fenty",
+    "Lat, Long": "34.400278, 70.498333",
+    "Start": "6/2/2005",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "",
+    "Country": "Afghanistan",
+    "Name": "Frontenac",
+    "Lat, Long": "31.867, 65.833",
+    "Start": "6/1/2007",
+    "Stop": "7/10/2014"
+  },
+  {
+    "Type": "",
+    "Country": "Afghanistan",
+    "Name": "Jalalabad",
+    "Lat, Long": "34.400278, 70.4983333",
+    "Start": "11/23/2003",
+    "Stop": "2/15/2011"
+  },
+  {
+    "Type": "",
+    "Country": "Afghanistan",
+    "Name": "Kabul",
+    "Lat, Long": "34.530559, 69.17973",
+    "Start": "1/1/2003",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "",
+    "Country": "Afghanistan",
+    "Name": "Kandahar",
+    "Lat, Long": "31.505833, 65.847778",
+    "Start": "6/1/2002",
+    "Stop": "9/30/2009"
+  },
+  {
+    "Type": "OP",
+    "Country": "Afghanistan",
+    "Name": "Korengal",
+    "Lat, Long": "34.4833, 70.154",
+    "Start": "7/15/2006",
+    "Stop": "12/31/2012"
+  },
+  {
+    "Type": "",
+    "Country": "Afghanistan",
+    "Name": "Lagman",
+    "Lat, Long": "32.13, 66.929722",
+    "Start": "1/1/2010",
+    "Stop": "12/31/2012"
+  },
+  {
+    "Type": "",
+    "Country": "Afghanistan",
+    "Name": "Lashkar Gar",
+    "Lat, Long": "31.623056, 64.381389",
+    "Start": "9/20/2009",
+    "Stop": "3/28/2013"
+  },
+  {
+    "Type": "",
+    "Country": "Afghanistan",
+    "Name": "Nolay",
+    "Lat, Long": "31.816667, 64.55",
+    "Start": "3/1/2008",
+    "Stop": "7/1/2014"
+  },
+  {
+    "Type": "",
+    "Country": "Afghanistan",
+    "Name": "Salerno",
+    "Lat, Long": "33.364, 69.957",
+    "Start": "10/18/2002",
+    "Stop": "3/29/2011"
+  },
+  {
+    "Type": "",
+    "Country": "Afghanistan",
+    "Name": "Shank",
+    "Lat, Long": "33.921944, 69.078056",
+    "Start": "1/1/2004",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "",
+    "Country": "Afghanistan",
+    "Name": "Sharana",
+    "Lat, Long": "33.128889, 68.839167",
+    "Start": "1/1/2003",
+    "Stop": "12/31/2010"
+  },
+  {
+    "Type": "AB",
+    "Country": "Afghanistan",
+    "Name": "Shindand",
+    "Lat, Long": "33.392222, 62.261111",
+    "Start": "1/1/2003",
+    "Stop": "11/15/2014"
+  },
+  {
+    "Type": "",
+    "Country": "Afghanistan",
+    "Name": "Spann",
+    "Lat, Long": "36.64946, 66.99677",
+    "Start": "11/12/2003",
+    "Stop": "6/30/2013"
+  },
+  {
+    "Type": "FOB",
+    "Country": "Afghanistan",
+    "Name": "Wright",
+    "Lat, Long": "34.87287, 71.15105",
+    "Start": "9/13/2003",
+    "Stop": "10/3/2014"
+  },
+  {
+    "Type": "",
+    "Country": "Bahrain",
+    "Name": "Isa",
+    "Lat, Long": "25.918333, 50.590556",
+    "Start": "1/1/2010",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "Camp",
+    "Country": "Djibouti",
+    "Name": "Lemonnier",
+    "Lat, Long": "11.543611,43.148611",
+    "Start": "10/1/2002",
+    "Stop": "12/31/2014"
+  },
+  {
+    "Type": "",
+    "Country": "Iraq",
+    "Name": "Al Asad",
+    "Lat, Long": "33.787222, 42.446389",
+    "Start": "7/1/2003",
+    "Stop": "12/31/2011"
+  },
+  {
+    "Type": "Camp",
+    "Country": "Iraq",
+    "Name": "Al Fallujah",
+    "Lat, Long": "33.315, 43.883056",
+    "Start": "6/8/2004",
+    "Stop": "8/20/2011"
+  },
+  {
+    "Type": "FOB",
+    "Country": "Iraq",
+    "Name": "Al Iskandariyah",
+    "Lat, Long": "32.965278, 44.278889",
+    "Start": "3/19/2003",
+    "Stop": "12/31/2011"
+  },
+  {
+    "Type": "",
+    "Country": "Iraq",
+    "Name": "Al Kut",
+    "Lat, Long": "32.49739, 45.80395",
+    "Start": "4/28/2003",
+    "Stop": "8/31/2011"
+  },
+  {
+    "Type": "",
+    "Country": "Iraq",
+    "Name": "Al Qaim",
+    "Lat, Long": "34.368794, 41.094472",
+    "Start": "8/26/2003",
+    "Stop": "7/14/2009"
+  },
+  {
+    "Type": "",
+    "Country": "Iraq",
+    "Name": "Ar Ramadi",
+    "Lat, Long": "33.4206, 43.3078",
+    "Start": "7/23/2003",
+    "Stop": "9/1/2011"
+  },
+  {
+    "Type": "",
+    "Country": "Jordan",
+    "Name": "JTC",
+    "Lat, Long": "32.02325, 36.12869",
+    "Start": "",
+    "Stop": ""
+  },
+  {
+    "Type": "",
+    "Country": "Jordan",
+    "Name": "King Abdullah II Special Operations Training Center (KASOTC)",
+    "Lat, Long": "32.032, 35.975",
+    "Start": "4/7/2011",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "AB",
+    "Country": "Jordan",
+    "Name": "Muwaffaq Salti",
+    "Lat, Long": "31.834167, 36.787222",
+    "Start": "6/30/2013",
+    "Stop": "7/30/2014"
+  },
+  {
+    "Type": "",
+    "Country": "Jordan",
+    "Name": "Prince Hassan Air Base and Vicinity",
+    "Lat, Long": "32.160833, 37.149722",
+    "Start": "12/30/2002",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "",
+    "Country": "Kingdom of Saudi Arabia",
+    "Name": "Eskan Village",
+    "Lat, Long": "24.582, 46.862",
+    "Start": "10/1/1999",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "AB",
+    "Country": "Kuwait",
+    "Name": "Ahmed Al Jaber",
+    "Lat, Long": "28.934917, 47.791972",
+    "Start": "10/1/2014",
+    "Stop": "12/1/2015"
+  },
+  {
+    "Type": "",
+    "Country": "Kuwait",
+    "Name": "Ali Al Salem and Vicinity",
+    "Lat, Long": "29.346667, 47.520556",
+    "Start": "1/1/2004",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "Camp",
+    "Country": "Kuwait",
+    "Name": "Buehring",
+    "Lat, Long": "29.697778, 47.426389",
+    "Start": "1/1/2004",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "",
+    "Country": "Kuwait",
+    "Name": "Kuwait City",
+    "Lat, Long": "28.878, 48.1579",
+    "Start": "1/1/2003",
+    "Stop": "9/30/2012"
+  },
+  {
+    "Type": "",
+    "Country": "Kuwait",
+    "Name": "Shuaiba Port and Vicinity",
+    "Lat, Long": "",
+    "Start": "3/21/2002",
+    "Stop": "12/31/2008"
+  },
+  {
+    "Type": "",
+    "Country": "Kyrgyzstan",
+    "Name": "Bishkek-Manas",
+    "Lat, Long": "43.05353, 74.46972",
+    "Start": "12/1/2002",
+    "Stop": "6/6/2014"
+  },
+  {
+    "Type": "",
+    "Country": "Liberia",
+    "Name": "Barclay Training Center and Vicinity",
+    "Lat, Long": "6.30624, -10.80348",
+    "Start": "9/1/2014",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "",
+    "Country": "Niger",
+    "Name": "Arlit",
+    "Lat, Long": "18.7333, 7.8333",
+    "Start": "9/27/2013",
+    "Stop": "8/11/2015"
+  },
+  {
+    "Type": "AB",
+    "Country": "Oman",
+    "Name": "Thumrait",
+    "Lat, Long": "17.665833, 54.024444",
+    "Start": "1/1/2010",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "AB",
+    "Country": "Qatar",
+    "Name": "Al Udeid",
+    "Lat, Long": "25.118611, 51.318611",
+    "Start": "5/1/2004",
+    "Stop": "9/30/2012"
+  },
+  {
+    "Type": "",
+    "Country": "Qatar",
+    "Name": "As Sayliyah",
+    "Lat, Long": "25.188399, 51.413527",
+    "Start": "1/1/2003",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "AB",
+    "Country": "Senegal",
+    "Name": "Dakar Airfield",
+    "Lat, Long": "14.73235, -17.48714",
+    "Start": "9/1/2014",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "",
+    "Country": "United Arab Emirates",
+    "Name": "Al Dhafra",
+    "Lat, Long": "24.24, 54.548333",
+    "Start": "2/2/2002",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "",
+    "Country": "United Arab Emirates",
+    "Name": "Fujairah",
+    "Lat, Long": "25.18805, 56.359733",
+    "Start": "1/1/2015",
+    "Stop": "12/31/2015"
+  },
+  {
+    "Type": "",
+    "Country": "Uzbekistan",
+    "Name": "Karshi-Khanabad",
+    "Lat, Long": "38.783333, 65.75",
+    "Start": "10/1/2001",
+    "Stop": "4/30/2005"
+  },
+  {
+    "Type": "",
+    "Country": "United Arab Emirates",
+    "Name": "Jebel Ali",
+    "Lat, Long": "25.01126, 55.06116",
+    "Start": "1/1/2012",
+    "Stop": "12/31/2015"
+  }
+]
