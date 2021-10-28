@@ -71,7 +71,8 @@ export default {
   ],
   env: {
     BASE_URL: 'https://nuxtjs.org',
-    MAP_KEY: process.env.MAP_KEY
+    MAP_KEY: process.env.MAP_KEY,
+    BE_URL: process.env.BE_URL
   },
 
   // Modules (https://go.nuxtjs.dev/config-modules)

@@ -116,7 +116,7 @@ const actions = {
     }`
     const variables = {}
     return axios
-      .post('http://localhost:3002/graphql', {
+      .post(`${process.env.BE_URL}/graphql`, {
         variables,
         query
       })
