@@ -1,0 +1,53 @@
+﻿Type,Country,Name,"Lat, Long",Start,Stop
+AFB,Afghanistan,Bagram,"34.946111, 69.265",11/9/2006,4/1/2011
+Camp,Afghanistan,Bastion,"31.851667, 65.197778",9/1/2006,12/31/2009
+Camp,Afghanistan,Black Horse,"34.519722, 69.345",3/1/2006,10/31/2010
+FOB,Afghanistan,Bostick-Monti,"35.209167, 73.521667",2/9/2006,7/31/2012
+Camp,Afghanistan,Leatherneck,"31.863889, 64.208056",12/30/2009,6/24/2014
+Camp,Afghanistan,Dwyer,"31.101111, 64.067222",1/1/2009,8/31/2011
+,Afghanistan,Clark,"33.341667, 69.736389",9/1/2006,8/14/2010
+,Afghanistan,Farah,"32.363667, 62.1675",5/2/2004,9/18/2013
+FOB,Afghanistan,Fenty,"34.400278, 70.498333",6/2/2005,12/31/2015
+,Afghanistan,Frontenac,"31.867, 65.833",6/1/2007,7/10/2014
+,Afghanistan,Jalalabad,"34.400278, 70.4983333",11/23/2003,2/15/2011
+,Afghanistan,Kabul,"34.530559, 69.17973",1/1/2003,12/31/2015
+,Afghanistan,Kandahar,"31.505833, 65.847778",6/1/2002,9/30/2009
+OP,Afghanistan,Korengal,"34.4833, 70.154",7/15/2006,12/31/2012
+,Afghanistan,Lagman,"32.13, 66.929722",1/1/2010,12/31/2012
+,Afghanistan,Lashkar Gar,"31.623056, 64.381389",9/20/2009,3/28/2013
+,Afghanistan,Nolay,"31.816667, 64.55",3/1/2008,7/1/2014
+,Afghanistan,Salerno,"33.364, 69.957",10/18/2002,3/29/2011
+,Afghanistan,Shank,"33.921944, 69.078056",1/1/2004,12/31/2015
+,Afghanistan,Sharana,"33.128889, 68.839167",1/1/2003,12/31/2010
+AB,Afghanistan,Shindand,"33.392222, 62.261111",1/1/2003,11/15/2014
+,Afghanistan,Spann,"36.64946, 66.99677",11/12/2003,6/30/2013
+FOB,Afghanistan,Wright,"34.87287, 71.15105",9/13/2003,10/3/2014
+,Bahrain,Isa,"25.918333, 50.590556",1/1/2010,12/31/2015
+Camp,Djibouti,Lemonnier,"11.543611,43.148611",10/1/2002,12/31/2014
+,Iraq,Al Asad,"33.787222, 42.446389",7/1/2003,12/31/2011
+Camp,Iraq,Al Fallujah,"33.315, 43.883056",6/8/2004,8/20/2011
+FOB,Iraq,Al Iskandariyah,"32.965278, 44.278889",3/19/2003,12/31/2011
+,Iraq,Al Kut,"32.49739, 45.80395",4/28/2003,8/31/2011
+,Iraq,Al Qaim,"34.368794, 41.094472",8/26/2003,7/14/2009
+,Iraq,Ar Ramadi,"33.4206, 43.3078",7/23/2003,9/1/2011
+,Jordan,JTC,"32.02325, 36.12869",,
+,Jordan,King Abdullah II Special Operations Training Center (KASOTC) ,"32.032, 35.975",4/7/2011,12/31/2015
+AB,Jordan,Muwaffaq Salti,"31.834167, 36.787222",6/30/2013,7/30/2014
+,Jordan,Prince Hassan Air Base and Vicinity,"32.160833, 37.149722",12/30/2002,12/31/2015
+,Kingdom of Saudi Arabia,Eskan Village,"24.582, 46.862",10/1/1999,12/31/2015
+AB,Kuwait,Ahmed Al Jaber,"28.934917, 47.791972",10/1/2014,12/1/2015
+,Kuwait,Ali Al Salem and Vicinity,"29.346667, 47.520556",1/1/2004,12/31/2015
+Camp,Kuwait,Buehring,"29.697778, 47.426389",1/1/2004,12/31/2015
+,Kuwait,Kuwait City,"28.878, 48.1579",1/1/2003,9/30/2012
+,Kuwait,Shuaiba Port and Vicinity,,3/21/2002,12/31/2008
+,Kyrgyzstan,Bishkek-Manas,"43.05353, 74.46972",12/1/2002,6/6/2014
+,Liberia,Barclay Training Center and Vicinity,"6.30624, -10.80348",9/1/2014,12/31/2015
+,Niger,Arlit,"18.7333, 7.8333",9/27/2013,8/11/2015
+AB,Oman,Thumrait,"17.665833, 54.024444",1/1/2010,12/31/2015
+AB,Qatar,Al Udeid,"25.118611, 51.318611",5/1/2004,9/30/2012
+,Qatar,As Sayliyah,"25.188399, 51.413527",1/1/2003,12/31/2015
+AB,Senegal,Dakar Airfield,"14.73235, -17.48714",9/1/2014,12/31/2015
+,United Arab Emirates,Al Dhafra,"24.24, 54.548333",2/2/2002,12/31/2015
+,United Arab Emirates,Fujairah,"25.18805, 56.359733",1/1/2015,12/31/2015
+,Uzbekistan,Karshi-Khanabad,"38.783333, 65.75",10/1/2001,4/30/2005
+,United Arab Emirates,Jebel Ali,"25.01126, 55.06116",1/1/2012,12/31/2015
